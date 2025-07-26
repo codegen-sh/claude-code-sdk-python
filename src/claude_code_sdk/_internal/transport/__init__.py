@@ -11,11 +11,6 @@ class Transport(ABC):
     """Abstract transport for Claude communication."""
 
     @abstractmethod
-    def configure(self, prompt: str, options: ClaudeCodeOptions) -> None:
-        """Configure transport with prompt and options."""
-        pass
-
-    @abstractmethod
     async def connect(self) -> None:
         """Initialize connection."""
         pass
