@@ -4,11 +4,15 @@ from abc import ABC, abstractmethod
 from collections.abc import AsyncIterator
 from typing import Any
 
-from claude_code_sdk.types import ClaudeCodeOptions
-
 
 class Transport(ABC):
-    """Abstract transport for Claude communication."""
+    """Abstract transport for Claude communication.
+
+    WARNING: This internal API is exposed for custom transport implementations
+    (e.g., remote Claude Code connections). The Claude Code team may change or
+    or remove this abstract class in any future release. Custom implementations
+    must be updated to match interface changes.
+    """
 
     @abstractmethod
     async def connect(self) -> None:
@@ -38,5 +42,4 @@ class Transport(ABC):
         pass
 
 
-# Import implementations
 __all__ = ["Transport"]
