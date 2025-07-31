@@ -73,7 +73,7 @@ ContentBlock = TextBlock | ToolUseBlock | ToolResultBlock
 class UserMessage:
     """User message."""
 
-    content: str
+    content: str | list[ContentBlock]
 
 
 @dataclass
@@ -127,3 +127,4 @@ class ClaudeCodeOptions:
     model: str | None = None
     permission_prompt_tool_name: str | None = None
     cwd: str | Path | None = None
+    settings: str | None = None
